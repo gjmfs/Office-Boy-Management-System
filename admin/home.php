@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="../Bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./css/menu.css">
 </head>
 <body>
 <?php include './nav.php'; ?> 
-<div class="home container">
+<div class="menu container">
     <div class="row row-cols-3">
         <div class="col">
             <a class="row row-cols-1 single" href="./food/menu.php">

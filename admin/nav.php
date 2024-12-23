@@ -13,7 +13,7 @@
         <label for="sidebar-active" class="close-sidebar-button">
           <img class="icons" src='../assets/icons/Nav/close.svg' />
         </label>
-        <a href="./foods.php">Foods</a>
+        <a href="./food/menu.php">Foods</a>
         <a href="./order/menu.php">Orders</a>
       </div>
     </nav>
