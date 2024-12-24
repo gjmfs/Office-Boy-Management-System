@@ -11,7 +11,7 @@ if (isset($_POST['submit'])) {
 
     // Handle file uploads
     $allowedTypes = array('image/jpeg', 'image/png', 'image/gif'); 
-    $uploadDir = "uploads/"; // Directory to store images
+    $uploadDir = "../../uploads/"; // Directory to store images
 
     if (isset($_FILES['food_image']) && !empty($_FILES['food_image']['name'])) {
         $ImageFile = $_FILES['food_image']['name']; 

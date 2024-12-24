@@ -1,11 +1,11 @@
 <?php
+
 include "./config.php";
 
 if(isset($_POST['submit'])){
-    $adminUserName = $_POST["adminUserName"];
-    $adminPassword = $_POST["adminPassword"];
-
-    $query = "SELECT * FROM admin WHERE uName='$adminUserName' AND uPassword='$adminPassword'";
+    $userName = $_POST["userName"];
+    $userPassword = $_POST["userPassword"];
+    $query = "SELECT * FROM user WHERE uName='$userName' AND uPassword='$userPassword'";
     $result = $connection->query($query);
 
     if($result->num_rows > 0){
@@ -13,7 +13,9 @@ if(isset($_POST['submit'])){
         session_start(); 
         $_SESSION['isLoggedIn'] = true; // Or any other appropriate session variable name
 
-        header("Location: home.php"); 
+        $_SESSION['username']=$userName;
+        $_SESSION['password']=$userPassword;
+        header("Location: ./home.php"); 
         exit; 
     } else {
         echo "User doesn't exist";
@@ -27,7 +29,7 @@ if(isset($_POST['submit'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin</title>
+    <title>User</title>
     <link rel="stylesheet" href="../Bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="../css/login.css">
 </head>
@@ -36,13 +38,13 @@ if(isset($_POST['submit'])){
     <div class="login"> 
         <div class="container">
             <form action="./login.php" method="post">
-                <h2 class="text-center pb-3">Admin Login</h2>
+                <h2 class="text-center pb-3">User Login</h2>
                 <div class="row mb-3">
                     <div class="col-3">
                         <label for="un">User Name:</label>
                     </div>
                     <div class="col">
-                        <input type="text" name="adminUserName" class="form-control">
+                        <input type="text" name="userName" class="form-control">
                     </div>
                 
                 </div>
@@ -51,7 +53,7 @@ if(isset($_POST['submit'])){
                         <label for="un">Password:</label>
                     </div>
                     <div class="col">
-                        <input type="password" name="adminPassword" class="form-control">
+                        <input type="password" name="userPassword" class="form-control">
                     </div>
                 </div>
                 <div class="row ps-2 pe-2 pt-4 pb-4">
