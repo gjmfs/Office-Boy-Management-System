@@ -47,6 +47,9 @@ nav img {
   max-height: 100px;
   min-height: 32px;
 }
+.logout {
+  height: 50px;
+}
 #sidebar-active {
   display: none;
 }

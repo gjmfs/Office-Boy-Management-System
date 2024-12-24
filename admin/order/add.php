@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register User</title>
-    <link rel="stylesheet" href="../Styles/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../Bootstrap/dist/css/bootstrap.css">
 </head>
 <body>
 <?php include './nav.php'; ?> 

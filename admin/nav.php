@@ -1,5 +1,5 @@
 <!-- navigation.php -->
- <link rel="stylesheet" href="./css/nav.css">
+ <link rel="stylesheet" href="../css/nav.css">
 <nav>
       <a href="./home.php">
         <img id="logo" src='../assets/icons/logo.svg' alt="logo" />
@@ -15,6 +15,9 @@
         </label>
         <a href="./food/menu.php">Foods</a>
         <a href="./order/menu.php">Orders</a>
+        <a href="./logout.php">
+          <img class='logout' src="../assets/icons/Nav/logout.svg" alt="logout">
+        </a>
       </div>
     </nav>
 

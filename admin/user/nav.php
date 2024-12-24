@@ -1,5 +1,5 @@
 <!-- navigation.php -->
- <link rel="stylesheet" href="../css/nav.css">
+ <link rel="stylesheet" href="../../css/nav.css">
  <link rel="stylesheet" href="../../Bootstrap/dist/css/bootstrap.css">
 <nav>
       <a href="../home.php">

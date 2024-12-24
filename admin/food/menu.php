@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>menu</title>
     <link rel="stylesheet" href="../../Bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" href="../css/menu.css">
+    <link rel="stylesheet" href="../../css/menu.css">
     
 </head>
 <body>
