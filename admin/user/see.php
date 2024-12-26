@@ -26,7 +26,7 @@ if(!isset($_SESSION['adminUsername'])){
     <tr>
       <th scope="col">User ID</th>
       <th scope="col">User Name</th>
-      <th scope="col">Table No</th>
+      <th scope="col">Cabin No</th>
     </tr>
   </thead>
   <tbody>
@@ -36,7 +36,7 @@ if(!isset($_SESSION['adminUsername'])){
             echo "<tr>";
             echo "<th scope='row'>{$row['e_id']}</th>";
             echo "<td>{$row['e_name']}</td>";
-            echo "<td>{$row['table_no']}</td>";
+            echo "<td>{$row['cabin_no']}</td>";
             echo "</tr>";
         }
     }

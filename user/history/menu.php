@@ -6,9 +6,9 @@ if(!isset($_SESSION['username'])){
 include './nav.php';
 include '../config.php';
 
-$table_no=$_SESSION['table_no'];
+$cabin_no=$_SESSION['cabin_no'];
 // Fetch images from the database
-$sql = "SELECT * FROM request where table_no='$table_no'"; 
+$sql = "SELECT * FROM request where cabin_no='$cabin_no' ORDER BY request_id DESC"; 
 $result = $connection->query($sql);
 
 ?>
@@ -45,7 +45,7 @@ $result = $connection->query($sql);
             echo "<tr>";
             echo "<th scope='row'>{$row['request_id']}</th>";
             echo "<td>{$row['employee_name']}</td>";
-            echo "<td>{$row['table_no']}</td>";
+            echo "<td>{$row['cabin_no']}</td>";
             echo "<td>{$row['subject']}</td>";
             echo "<td>{$row['msg']}</td>";
             echo "<td>{$row['drink_item']}</td>";

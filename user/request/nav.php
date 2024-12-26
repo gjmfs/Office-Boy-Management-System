@@ -18,6 +18,7 @@
         
         <a href="./request.php">Order</a>
         <a href="../history/menu.php">History</a>
+        <a href="../task/menu.php">Daily Tasks</a>
         <a href="../logout.php">
           <img class='logout' src="../../assets/icons/Nav/logout.svg" alt="logout">
         </a>

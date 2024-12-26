@@ -7,7 +7,7 @@ include './nav.php';
 include '../config.php';
 
 // Fetch images from the database
-$sql = "SELECT * FROM request"; 
+$sql = "SELECT * FROM request ORDER BY request_id DESC"; 
 $result = $connection->query($sql);
 
 ?>
@@ -44,7 +44,7 @@ $result = $connection->query($sql);
             echo "<tr>
             <th scope='row'>{$row['request_id']}</th>
             <td>{$row['employee_name']}</td>
-            <td>{$row['table_no']}</td>
+            <td>{$row['cabin_no']}</td>
             <td>{$row['subject']}</td>
             <td>{$row['msg']}</td>
             <td>{$row['drink_item']}</td>

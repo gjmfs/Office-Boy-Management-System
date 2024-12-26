@@ -9,9 +9,6 @@ session_destroy();
 
 
 header("Location: login.php");
-//delete localstorage values
-echo "<script>";
-echo "localStorage.clear()";
-echo "</script>";
+
 exit;
 ?>

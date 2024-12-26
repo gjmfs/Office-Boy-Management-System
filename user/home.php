@@ -23,7 +23,7 @@ include './nav.php';
 
 ?> 
 <div class="menu container">
-    <div class="row row-cols-2">
+    <div class="row row-cols-3">
         <div class="col">
             <a class="row row-cols-1 single" href="./request/request.php">
                 <div class="col">
@@ -41,6 +41,16 @@ include './nav.php';
                 </div>
                 <div class="col">
                     <p>History</p>
+                </div>
+            </a>
+        </div>
+        <div class="col">
+            <a class="row row-cols-1 single" href="./task/menu.php">
+                <div class="col">
+                <img src="../assets/icons/task.svg" alt="">
+                </div>
+                <div class="col">
+                    <p>Daily Task</p>
                 </div>
             </a>
         </div>

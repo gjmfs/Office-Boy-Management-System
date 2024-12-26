@@ -16,14 +16,14 @@ if(!isset($_SESSION['adminUsername'])){
     if(isset($_POST['submit'])){
         $username=$_POST['userName'];
         $password=$_POST['password'];
-        $table_No=$_POST['table_no'];
+        $cabin_no=$_POST['cabin_no'];
 
         $exist="select * from employee where e_name='$username' and e_password='$password'";
         $result=$connection->query($exist);
         if($result->num_rows>0){
             echo "user already exist";
         }else{
-            $addUser="insert into employee(e_name,e_password,table_no) values('$username','$password','$table_No')";
+            $addUser="insert into employee(e_name,e_password,cabin_no) values('$username','$password','$cabin_no')";
             $result=$connection->query($addUser);
             echo "user registration successfull";
         }
@@ -39,8 +39,8 @@ if(!isset($_SESSION['adminUsername'])){
     <input type="text" class="form-control" name="userName">
   </div>
   <div class="mb-3">
-    <label class="form-label">Table No:</label>
-    <input type="number" name="table_no" class="form-control">
+    <label class="form-label">Cabin No:</label>
+    <input type="number" name="cabin_no" class="form-control">
   </div>
   <div class="mb-3">
     <label class="form-label">Password</label>

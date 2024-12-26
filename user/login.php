@@ -10,7 +10,8 @@ if(isset($_POST['submit'])){
     if($result->num_rows > 0){
         while($row = $result->fetch_assoc()) {
             $_SESSION['username']=$row['e_name'];
-            $_SESSION['table_no']=$row['table_no'];
+            $_SESSION['cabin_no']=$row['cabin_no'];
+            $_SESSION['e_id']=$row['e_id'];
         }
         header("Location: ./home.php");
     } else {

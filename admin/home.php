@@ -41,4 +41,30 @@ if(!isset($_SESSION['adminUsername'])){
 </div>
 
 </body>
+<script>
+function checkNotifications() {
+    fetch('./fetch_notifications.php')
+        .then(response => response.json())
+        .then(data => {
+            if (data.length > 0) {
+                let message = "";
+                data.forEach(notification => {
+                    message += notification.message ;
+                });
+                alert("You have new notifications:\n" + message);
+                // Optionally, mark them as read
+                markAsRead(data);
+            }
+        });
+}
+
+function markAsRead(notifications) {
+    notifications.forEach(notification => {
+        fetch(`mark_as_read.php?id=${notification.id}`, { method: 'POST' });
+    });
+}
+
+setInterval(checkNotifications, 5000); // Check every 5 seconds
+</script>
+
 </html>
