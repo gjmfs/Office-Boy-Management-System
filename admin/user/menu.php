@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(!isset($_SESSION['adminUsername'])){
+    die ("You are not logged in ");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +19,7 @@
 <?php include './nav.php'; ?> 
     
 <div class="menu container">
-    <div class="row row-cols-2 ">
+    <div class="row row-cols-2">
         <div class="col">
             <a class="row row-cols-1 single" href="./add.php">
                 <div class="col">

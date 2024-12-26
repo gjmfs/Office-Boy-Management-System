@@ -1,3 +1,11 @@
+<?php
+session_start();
+if(!isset($_SESSION['username'])){
+   
+    die ("Login as a user. Youre not logged in ");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,30 +14,33 @@
     <title>Home</title>
     <link rel="stylesheet" href="../Bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="../css/menu.css">
+    
+
 </head>
 <body>
-<?php include './nav.php'; 
+<?php 
+include './nav.php'; 
 
 ?> 
 <div class="menu container">
     <div class="row row-cols-2">
         <div class="col">
-            <a class="row row-cols-1 single" href="./food/menu.php">
-                <div class="col">
-                <img src="../assets/icons/food.svg" alt="">
-                </div>
-                <div class="col">
-                    <p>Food</p>
-                </div>
-            </a>
-        </div>
-        <div class="col">
-            <a class="row row-cols-1 single" href="./order/menu.php">
+            <a class="row row-cols-1 single" href="./request/request.php">
                 <div class="col">
                 <img src="../assets/icons/order.svg" alt="">
                 </div>
                 <div class="col">
                     <p>Order</p>
+                </div>
+            </a>
+        </div>
+        <div class="col">
+            <a class="row row-cols-1 single" href="./history/menu.php">
+                <div class="col">
+                <img src="../assets/icons/history.svg" alt="history icon">
+                </div>
+                <div class="col">
+                    <p>History</p>
                 </div>
             </a>
         </div>

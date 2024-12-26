@@ -1,6 +1,6 @@
 <?php
-include "./config.php";
 
+include "./config.php";
 if(isset($_POST['submit'])){
     $adminUserName = $_POST["adminUserName"];
     $adminPassword = $_POST["adminPassword"];
@@ -12,7 +12,9 @@ if(isset($_POST['submit'])){
         // Set a session variable to indicate successful login
         session_start(); 
         $_SESSION['isLoggedIn'] = true; // Or any other appropriate session variable name
-
+        while($row = $result->fetch_assoc()) {
+            $_SESSION['adminUsername']=$row['uName'];
+        }
         header("Location: home.php"); 
         exit; 
     } else {

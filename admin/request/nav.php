@@ -14,8 +14,11 @@
         <label for="sidebar-active" class="close-sidebar-button">
           <img class="icons" src='../../assets/icons/Nav/close.svg' />
         </label>
-        <a href="../food/menu.php">Foods</a>
+        <a href="../user/menu.php">User</a>
         <a href="./menu.php">Orders</a>
+        <a href="../logout.php">
+          <img class='logout' src="../../assets/icons/Nav/logout.svg" alt="logout">
+        </a>
       </div>
     </nav>
 

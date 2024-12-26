@@ -8,4 +8,6 @@
     if($connection->connect_error){
         die ("Database connection error");
     }
+
+    
 ?>

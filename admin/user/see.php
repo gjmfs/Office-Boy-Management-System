@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(!isset($_SESSION['adminUsername'])){
+    die ("You are not logged in ");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +17,7 @@
         include './nav.php';
         include '../config.php';
 
-        $sql= 'select * from user';
+        $sql= 'select * from employee';
         $result= $connection->query($sql);
 
     ?>
@@ -19,7 +26,7 @@
     <tr>
       <th scope="col">User ID</th>
       <th scope="col">User Name</th>
-      <th scope="col">Password</th>
+      <th scope="col">Table No</th>
     </tr>
   </thead>
   <tbody>
@@ -27,9 +34,9 @@
     if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
             echo "<tr>";
-            echo "<th scope='row'>{$row['u_id']}</th>";
-            echo "<td>{$row['uName']}</td>";
-            echo "<td>{$row['uPassword']}</td>";
+            echo "<th scope='row'>{$row['e_id']}</th>";
+            echo "<td>{$row['e_name']}</td>";
+            echo "<td>{$row['table_no']}</td>";
             echo "</tr>";
         }
     }

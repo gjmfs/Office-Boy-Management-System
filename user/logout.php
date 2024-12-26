@@ -6,6 +6,12 @@ $_SESSION = array();
 // Destroy the session
 session_destroy();
 // Redirect to the login page
+
+
 header("Location: login.php");
+//delete localstorage values
+echo "<script>";
+echo "localStorage.clear()";
+echo "</script>";
 exit;
 ?>

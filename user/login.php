@@ -1,28 +1,23 @@
 <?php
-
+session_start();
 include "./config.php";
 
 if(isset($_POST['submit'])){
     $userName = $_POST["userName"];
     $userPassword = $_POST["userPassword"];
-    $query = "SELECT * FROM user WHERE uName='$userName' AND uPassword='$userPassword'";
+    $query = "SELECT * FROM employee WHERE e_name='$userName' AND e_password='$userPassword'";
     $result = $connection->query($query);
-
     if($result->num_rows > 0){
-        // Set a session variable to indicate successful login
-        session_start(); 
-        $_SESSION['isLoggedIn'] = true; // Or any other appropriate session variable name
-
-        $_SESSION['username']=$userName;
-        $_SESSION['password']=$userPassword;
-        header("Location: ./home.php"); 
-        exit; 
+        while($row = $result->fetch_assoc()) {
+            $_SESSION['username']=$row['e_name'];
+            $_SESSION['table_no']=$row['table_no'];
+        }
+        header("Location: ./home.php");
     } else {
         echo "User doesn't exist";
     }
-}else
+}
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -63,5 +58,6 @@ if(isset($_POST['submit'])){
         </div>
     </div>    
 </body>
+
 <script src="../Bootstrap/dist/js/bootstrap.js"><script>
 </html>

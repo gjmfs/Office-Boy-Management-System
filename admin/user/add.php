@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(!isset($_SESSION['adminUsername'])){
+  die ("You are not logged in ");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,19 +16,16 @@
     if(isset($_POST['submit'])){
         $username=$_POST['userName'];
         $password=$_POST['password'];
+        $table_No=$_POST['table_no'];
 
-        $exist="select * from user where uName='$username' and uPassword='$password'";
+        $exist="select * from employee where e_name='$username' and e_password='$password'";
         $result=$connection->query($exist);
         if($result->num_rows>0){
             echo "user already exist";
         }else{
-            $addUser="insert into user(uName,uPassword) values('$username','$password')";
+            $addUser="insert into employee(e_name,e_password,table_no) values('$username','$password','$table_No')";
             $result=$connection->query($addUser);
-            if($result->num_rows>0){
-                echo "user registration successfull";
-            }else{
-                echo "an error occured while creating user account";
-            }
+            echo "user registration successfull";
         }
     }
     ?>
@@ -31,15 +35,17 @@
 <div class="container">
 <form action='./add.php' method="POST">
   <div class="mb-3">
-    <label  class="form-label">User Name</label>
+    <label  class="form-label">Employee Name:</label>
     <input type="text" class="form-control" name="userName">
-    
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Table No:</label>
+    <input type="number" name="table_no" class="form-control">
   </div>
   <div class="mb-3">
     <label class="form-label">Password</label>
     <input type="password" name="password" class="form-control">
   </div>
-  
   <button type="submit" class="btn btn-primary" name="submit">Submit</button>
 </form>
 </div>

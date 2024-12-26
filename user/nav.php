@@ -13,8 +13,8 @@
         <label for="sidebar-active" class="close-sidebar-button">
           <img class="icons" src='../assets/icons/Nav/close.svg' />
         </label>
-        <a href="./food/menu.php">Foods</a>
-        <a href="./order/menu.php">Orders</a>
+        <a href="./request/request.php">Order</a>
+        <a href="./history/menu.php">History</a>
         <a href="./logout.php">
           <img class='logout' src="../assets/icons/Nav/logout.svg" alt="logout">
         </a>
