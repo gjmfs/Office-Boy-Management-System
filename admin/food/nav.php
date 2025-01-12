@@ -16,6 +16,8 @@
         </label>
         <a href="./menu.php">Foods</a>
         <a href="../order/menu.php">Orders</a>
+        <a href="../task/menu.php">Task</a>
+
       </div>
     </nav>
 

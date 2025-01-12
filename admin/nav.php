@@ -15,9 +15,11 @@
         </label>
         <a href="./user/menu.php">User</a>
         <a href="./request/menu.php">Orders</a>
+        <a href="./task/menu.php">Task</a>
         <a href="./logout.php">
           <img class='logout' src="../assets/icons/Nav/logout.svg" alt="logout">
         </a>
+
       </div>
     </nav>
 

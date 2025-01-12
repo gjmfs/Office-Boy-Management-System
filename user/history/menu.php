@@ -1,16 +1,8 @@
 <?php
 session_start();
 if(!isset($_SESSION['username'])){
-  die ("Youre not logged in ");
+    die ("You are not logged in ");
 }
-include './nav.php';
-include '../config.php';
-
-$cabin_no=$_SESSION['cabin_no'];
-// Fetch images from the database
-$sql = "SELECT * FROM request where cabin_no='$cabin_no' ORDER BY request_id DESC"; 
-$result = $connection->query($sql);
-
 ?>
 
 <!DOCTYPE html>
@@ -18,44 +10,36 @@ $result = $connection->query($sql);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foods</title>
-    <link rel="stylesheet" href="../../css/card.css">
+    <title>menu</title>
+    <link rel="stylesheet" href="../../Bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../../css/menu.css">
     
-
 </head>
 <body>
-
-    <h1 class="text-center m-5 ">Food Details</h1>
-    <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Request ID</th>
-      <th scope="col">Employee Name</th>
-      <th scope="col">Table NO</th>
-      <th scope="col">Subject</th>
-      <th scope="col">Message</th>
-      <th scope="col">Drink Item</th>
-      <th scope="col">Quantity</th>
-    </tr>
-  </thead>
-  <tbody>
-    <?php
-    if ($result->num_rows > 0) {
-        while($row = $result->fetch_assoc()) {
-            echo "<tr>";
-            echo "<th scope='row'>{$row['request_id']}</th>";
-            echo "<td>{$row['employee_name']}</td>";
-            echo "<td>{$row['cabin_no']}</td>";
-            echo "<td>{$row['subject']}</td>";
-            echo "<td>{$row['msg']}</td>";
-            echo "<td>{$row['drink_item']}</td>";
-            echo "<td>{$row['quantity']}</td>";
-            echo "</tr>";
-        }
-    }
-    ?>
-  </tbody>
-</table>
+<?php include './nav.php'; ?> 
+    
+<div class="menu container">
+    <div class="row row-cols-2">
+        <div class="col">
+            <a class="row row-cols-1 single" href="./food_order.php">
+                <div class="col">
+                <img src="../../assets/icons/food.svg" alt="">
+                </div>
+                <div class="col">
+                    <p>Food Order History</p>
+                </div>
+            </a>
+        </div>
+        <div class="col">
+            <a class="row row-cols-1 single" href="./task.php">
+                <div class="col">
+                <img src="../../assets/icons/task.svg" alt="">
+                </div>
+                <div class="col">
+                    <p>Task History</p>
+                </div>
+            </a>
     </div>
+</div>
 </body>
 </html>

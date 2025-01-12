@@ -21,7 +21,7 @@ if(!isset($_SESSION['adminUsername'])){
         $result= $connection->query($sql);
 
     ?>
-    <table class="table">
+    <table class="table table-striped">
   <thead>
     <tr>
       <th scope="col">User ID</th>

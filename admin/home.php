@@ -17,23 +17,34 @@ if(!isset($_SESSION['adminUsername'])){
 <body>
 <?php include './nav.php'; ?> 
 <div class="menu container">
-    <div class="row row-cols-2">
+    <div class="row row-cols-2 d-flex align-content-center justify-content-center">
         <div class="col">
             <a class="row row-cols-1 single" href="./user/menu.php">
                 <div class="col">
-                <img src="../assets/icons/user.svg" alt="">
+                <img src="../assets/icons/user.svg" alt="" class="img-fluid">
                 </div>
                 <div class="col">
                     <p>User</p>
                 </div>
             </a>
-        </div><div class="col">
+        </div>
+        <div class="col">
             <a class="row row-cols-1 single" href="./request/menu.php">
                 <div class="col">
-                <img src="../assets/icons/order.svg" alt="">
+                <img src="../assets/icons/order.svg" alt="" class="img-fluid">
                 </div>
                 <div class="col">
                     <p>Order</p>
+                </div>
+            </a>
+        </div>
+        <div class="col">
+            <a class="row row-cols-1 single" href="./task/menu.php">
+                <div class="col">
+                <img src="../assets/icons/task.svg" alt="" class="img-fluid">
+                </div>
+                <div class="col">
+                    <p>Task</p>
                 </div>
             </a>
         </div>

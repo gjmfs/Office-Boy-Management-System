@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="./css/menu.css">
 </head>
 <body>
+    <style>
+        body{
+            background: #9d8189;
+        }
+    </style>
 <div class="menu container">
     <div class="row row-cols-2">
         <div class="col">

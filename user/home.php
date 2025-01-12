@@ -23,11 +23,11 @@ include './nav.php';
 
 ?> 
 <div class="menu container">
-    <div class="row row-cols-3">
+    <div class="row row-cols-2 d-flex justify-content-center align-content-center">
         <div class="col">
             <a class="row row-cols-1 single" href="./request/request.php">
                 <div class="col">
-                <img src="../assets/icons/order.svg" alt="">
+                <img src="../assets/icons/order.svg" alt="" class="img-fluid">
                 </div>
                 <div class="col">
                     <p>Order</p>
@@ -37,7 +37,7 @@ include './nav.php';
         <div class="col">
             <a class="row row-cols-1 single" href="./history/menu.php">
                 <div class="col">
-                <img src="../assets/icons/history.svg" alt="history icon">
+                <img src="../assets/icons/history.svg" alt="history icon" class="img-fluid">
                 </div>
                 <div class="col">
                     <p>History</p>
@@ -47,7 +47,7 @@ include './nav.php';
         <div class="col">
             <a class="row row-cols-1 single" href="./task/menu.php">
                 <div class="col">
-                <img src="../assets/icons/task.svg" alt="">
+                <img src="../assets/icons/task.svg" alt="" class="img-fluid">
                 </div>
                 <div class="col">
                     <p>Daily Task</p>

@@ -7,7 +7,7 @@ include './nav.php';
 include '../config.php';
 
 // Fetch images from the database
-$sql = "SELECT * FROM request ORDER BY request_id DESC"; 
+$sql = "SELECT * FROM task ORDER BY task_id DESC"; 
 $result = $connection->query($sql);
 
 ?>
@@ -26,17 +26,15 @@ $result = $connection->query($sql);
 
     <h1 class="text-center m-5 ">Food Details</h1>
     <div class="tb-scroll">
-    <table class="table table-striped">
-  <thead>
+    <table class="table table-striped table-hover">
+    <thead>
     <tr>
       <th scope="col">Request ID</th>
       <th scope="col">Employee Name</th>
-      <th scope="col">Cabin No</th>
-      <th scope="col">Subject</th>
+      <th scope="col">Cabin NO</th>
       <th scope="col">Message</th>
-      <th scope="col">Drink Item</th>
-      <th scope="col">Quantity</th>
       <th></th>
+      
     </tr>
   </thead>
   <tbody>
@@ -44,16 +42,13 @@ $result = $connection->query($sql);
     if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
             echo "<tr>
-            <th scope='row'>{$row['request_id']}</th>
+            <th scope='row'>{$row['task_id']}</th>
             <td>{$row['employee_name']}</td>
             <td>{$row['cabin_no']}</td>
-            <td>{$row['subject']}</td>
             <td>{$row['msg']}</td>
-            <td>{$row['drink_item']}</td>
-            <td>{$row['quantity']}</td>
             <td>
             <form action='./delete.php' method='post' style='display:inline;'>
-                 <input type='hidden' name='id' value='{$row['request_id']}'>
+                 <input type='hidden' name='id' value='{$row['task_id']}'>
                  <button type='submit' name='delete' style='border:none; background:none;'>
                  <img class='remove' src='../../assets/icons/delete.svg' alt='Delete'/>
                 </button>
